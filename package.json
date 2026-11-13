@@ -1,0 +1,19 @@
+{
+  "name": "kv-tech-web",
+  "version": "1.0.0",
+  "description": "KV TECH IT • Security • Solutions Website",
+  "main": "serve.js",
+  "scripts": {
+    "start": "node serve.js",
+    "dev": "node serve.js",
+    "serve": "node serve.js"
+  },
+  "keywords": [
+    "cctv",
+    "security",
+    "networking",
+    "kvtech"
+  ],
+  "author": "KV TECH",
+  "license": "ISC"
+}

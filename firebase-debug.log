@@ -1,0 +1,161 @@
+[debug] [2026-11-13T18:14:01.670Z] ----------------------------------------------------------------------
+[debug] [2026-11-13T18:14:01.675Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\ASUS\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init hosting
+[debug] [2026-11-13T18:14:01.675Z] CLI Version:   15.36.0
+[debug] [2026-11-13T18:14:01.675Z] Platform:      win32
+[debug] [2026-11-13T18:14:01.676Z] Node Version:  v24.19.0
+[debug] [2026-11-13T18:14:01.676Z] Detected Agent: unknown
+[debug] [2026-11-13T18:14:01.676Z] Time:          Fri Nov 13 2026 23:44:01 GMT+0530 (India Standard Time)
+[debug] [2026-11-13T18:14:01.676Z] ----------------------------------------------------------------------
+[debug] 
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\ASUS\Desktop\New folder
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] 
+[info] i  If you want to create a project in a Google Cloud organization or folder, please use "firebase projects:create" instead, and return to this command when you've created the project. 
+[debug] [2026-11-13T18:14:58.694Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-11-13T18:14:58.694Z] > authorizing via signed-in user (narthuofficial@gmail.com)
+[debug] [2026-11-13T18:52:06.512Z] Checked if tokens are valid: true, expires at: 1794597216139
+[debug] [2026-11-13T18:52:06.513Z] Checked if tokens are valid: true, expires at: 1794597216139
+[debug] [2026-11-13T18:52:06.516Z] >>> [apiv2][query] POST https://firebase.googleapis.com/v1/projects:checkProjectId [none]
+[debug] [2026-11-13T18:52:06.518Z] >>> [apiv2][body] POST https://firebase.googleapis.com/v1/projects:checkProjectId {"proposedId":"kv ccv 2025"}
+[debug] [2026-11-13T18:52:07.635Z] <<< [apiv2][status] POST https://firebase.googleapis.com/v1/projects:checkProjectId 200
+[debug] [2026-11-13T18:52:07.635Z] <<< [apiv2][body] POST https://firebase.googleapis.com/v1/projects:checkProjectId {"projectIdStatus":"PROJECT_ID_NOT_VALID","suggestedProjectId":"kv-ccv-2025"}
+[debug] [2026-11-13T18:52:35.462Z] Checked if tokens are valid: true, expires at: 1794597216139
+[debug] [2026-11-13T18:52:35.462Z] Checked if tokens are valid: true, expires at: 1794597216139
+[debug] [2026-11-13T18:52:35.464Z] >>> [apiv2][query] POST https://firebase.googleapis.com/v1/projects:checkProjectId [none]
+[debug] [2026-11-13T18:52:35.464Z] >>> [apiv2][body] POST https://firebase.googleapis.com/v1/projects:checkProjectId {"proposedId":"kv-cctv-2025"}
+[debug] [2026-11-13T18:52:36.193Z] <<< [apiv2][status] POST https://firebase.googleapis.com/v1/projects:checkProjectId 200
+[debug] [2026-11-13T18:52:36.193Z] <<< [apiv2][body] POST https://firebase.googleapis.com/v1/projects:checkProjectId {"projectIdStatus":"PROJECT_ID_AVAILABLE","suggestedProjectId":"kv-cctv-2025"}
+[debug] [2026-11-13T18:53:06.019Z] Checked if tokens are valid: true, expires at: 1794597216139
+[debug] [2026-11-13T18:53:06.019Z] Checked if tokens are valid: true, expires at: 1794597216139
+[debug] [2026-11-13T18:53:06.019Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects [none]
+[debug] [2026-11-13T18:53:06.020Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects {"projectId":"kv-cctv-2025","name":"first web"}
+[debug] [2026-11-13T18:53:07.853Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects 200
+[debug] [2026-11-13T18:53:07.854Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects {"name":"operations/create_project.global.5985051757415665299"}
+[debug] [2026-11-13T18:53:07.855Z] Checked if tokens are valid: true, expires at: 1794597216139
+[debug] [2026-11-13T18:53:07.855Z] Checked if tokens are valid: true, expires at: 1794597216139
+[debug] [2026-11-13T18:53:07.855Z] >>> [apiv2][query] GET https://cloudresourcemanager.googleapis.com/v1/operations/create_project.global.5985051757415665299 [none]
+[debug] [2026-11-13T18:53:09.375Z] <<< [apiv2][status] GET https://cloudresourcemanager.googleapis.com/v1/operations/create_project.global.5985051757415665299 200
+[debug] [2026-11-13T18:53:09.375Z] <<< [apiv2][body] GET https://cloudresourcemanager.googleapis.com/v1/operations/create_project.global.5985051757415665299 {"name":"operations/create_project.global.5985051757415665299","metadata":{"@type":"type.googleapis.com/google.cloudresourcemanager.v1.ProjectCreationStatus","gettable":true,"ready":true},"done":true,"response":{"@type":"type.googleapis.com/google.cloudresourcemanager.v1.Project","projectNumber":"919589256998","projectId":"kv-cctv-2025","lifecycleState":"ACTIVE","name":"first web","createTime":"2026-11-13T18:53:08.056Z"}}
+[debug] [2026-11-13T18:53:09.377Z] Checked if tokens are valid: true, expires at: 1794597216139
+[debug] [2026-11-13T18:53:09.377Z] Checked if tokens are valid: true, expires at: 1794597216139
+[debug] [2026-11-13T18:53:09.377Z] >>> [apiv2][query] POST https://firebase.googleapis.com/v1beta1/projects/kv-cctv-2025:addFirebase [none]
+[debug] [2026-11-13T18:53:13.675Z] <<< [apiv2][status] POST https://firebase.googleapis.com/v1beta1/projects/kv-cctv-2025:addFirebase 200
+[debug] [2026-11-13T18:53:13.675Z] <<< [apiv2][body] POST https://firebase.googleapis.com/v1beta1/projects/kv-cctv-2025:addFirebase {"name":"operations/workflows/N2EzYmI0ZmEtODkzYy00ZDJhLWIwYTUtYTY1ZTdlNGFmNzg4"}
+[debug] [2026-11-13T18:53:13.675Z] Checked if tokens are valid: true, expires at: 1794597216139
+[debug] [2026-11-13T18:53:13.675Z] Checked if tokens are valid: true, expires at: 1794597216139
+[debug] [2026-11-13T18:53:13.675Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/operations/workflows/N2EzYmI0ZmEtODkzYy00ZDJhLWIwYTUtYTY1ZTdlNGFmNzg4 [none]
+[debug] [2026-11-13T18:53:15.008Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/operations/workflows/N2EzYmI0ZmEtODkzYy00ZDJhLWIwYTUtYTY1ZTdlNGFmNzg4 200
+[debug] [2026-11-13T18:53:15.008Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/operations/workflows/N2EzYmI0ZmEtODkzYy00ZDJhLWIwYTUtYTY1ZTdlNGFmNzg4 {"name":"operations/workflows/N2EzYmI0ZmEtODkzYy00ZDJhLWIwYTUtYTY1ZTdlNGFmNzg4"}
+[debug] [2026-11-13T18:53:15.511Z] [Add Firebase Poller] Retrying task index 0
+[debug] [2026-11-13T18:53:15.512Z] Checked if tokens are valid: true, expires at: 1794597216139
+[debug] [2026-11-13T18:53:15.512Z] Checked if tokens are valid: true, expires at: 1794597216139
+[debug] [2026-11-13T18:53:15.512Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/operations/workflows/N2EzYmI0ZmEtODkzYy00ZDJhLWIwYTUtYTY1ZTdlNGFmNzg4 [none]
+[debug] [2026-11-13T18:53:16.855Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/operations/workflows/N2EzYmI0ZmEtODkzYy00ZDJhLWIwYTUtYTY1ZTdlNGFmNzg4 200
+[debug] [2026-11-13T18:53:16.855Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/operations/workflows/N2EzYmI0ZmEtODkzYy00ZDJhLWIwYTUtYTY1ZTdlNGFmNzg4 {"name":"operations/workflows/N2EzYmI0ZmEtODkzYy00ZDJhLWIwYTUtYTY1ZTdlNGFmNzg4"}
+[debug] [2026-11-13T18:53:17.865Z] [Add Firebase Poller] Retrying task index 0
+[debug] [2026-11-13T18:53:17.865Z] Checked if tokens are valid: true, expires at: 1794597216139
+[debug] [2026-11-13T18:53:17.865Z] Checked if tokens are valid: true, expires at: 1794597216139
+[debug] [2026-11-13T18:53:17.866Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/operations/workflows/N2EzYmI0ZmEtODkzYy00ZDJhLWIwYTUtYTY1ZTdlNGFmNzg4 [none]
+[debug] [2026-11-13T18:53:19.111Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/operations/workflows/N2EzYmI0ZmEtODkzYy00ZDJhLWIwYTUtYTY1ZTdlNGFmNzg4 200
+[debug] [2026-11-13T18:53:19.111Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/operations/workflows/N2EzYmI0ZmEtODkzYy00ZDJhLWIwYTUtYTY1ZTdlNGFmNzg4 {"name":"operations/workflows/N2EzYmI0ZmEtODkzYy00ZDJhLWIwYTUtYTY1ZTdlNGFmNzg4"}
+[debug] [2026-11-13T18:53:21.113Z] [Add Firebase Poller] Retrying task index 0
+[debug] [2026-11-13T18:53:21.114Z] Checked if tokens are valid: true, expires at: 1794597216139
+[debug] [2026-11-13T18:53:21.114Z] Checked if tokens are valid: true, expires at: 1794597216139
+[debug] [2026-11-13T18:53:21.114Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/operations/workflows/N2EzYmI0ZmEtODkzYy00ZDJhLWIwYTUtYTY1ZTdlNGFmNzg4 [none]
+[debug] [2026-11-13T18:53:22.470Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/operations/workflows/N2EzYmI0ZmEtODkzYy00ZDJhLWIwYTUtYTY1ZTdlNGFmNzg4 200
+[debug] [2026-11-13T18:53:22.470Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/operations/workflows/N2EzYmI0ZmEtODkzYy00ZDJhLWIwYTUtYTY1ZTdlNGFmNzg4 {"name":"operations/workflows/N2EzYmI0ZmEtODkzYy00ZDJhLWIwYTUtYTY1ZTdlNGFmNzg4"}
+[debug] [2026-11-13T18:53:26.479Z] [Add Firebase Poller] Retrying task index 0
+[debug] [2026-11-13T18:53:26.479Z] Checked if tokens are valid: true, expires at: 1794597216139
+[debug] [2026-11-13T18:53:26.479Z] Checked if tokens are valid: true, expires at: 1794597216139
+[debug] [2026-11-13T18:53:26.479Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/operations/workflows/N2EzYmI0ZmEtODkzYy00ZDJhLWIwYTUtYTY1ZTdlNGFmNzg4 [none]
+[debug] [2026-11-13T18:53:27.911Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/operations/workflows/N2EzYmI0ZmEtODkzYy00ZDJhLWIwYTUtYTY1ZTdlNGFmNzg4 200
+[debug] [2026-11-13T18:53:27.912Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/operations/workflows/N2EzYmI0ZmEtODkzYy00ZDJhLWIwYTUtYTY1ZTdlNGFmNzg4 {"name":"operations/workflows/N2EzYmI0ZmEtODkzYy00ZDJhLWIwYTUtYTY1ZTdlNGFmNzg4","done":true,"response":{"@type":"type.googleapis.com/google.firebase.service.v1beta1.FirebaseProject","projectId":"kv-cctv-2025","projectNumber":"919589256998","displayName":"first web","name":"projects/kv-cctv-2025","resources":{"hostingSite":"kv-cctv-2025"}}}
+[info] 
+[info] === Your Firebase project is ready! ===
+[info] 
+[info] Project information:
+[info]    - Project ID: kv-cctv-2025
+[info]    - Project Name: first web
+[info] 
+[info] Firebase console is available at
+[info] https://console.firebase.google.com/project/kv-cctv-2025/overview
+[info] 
+=== Hosting Setup
+[debug] [2026-11-13T18:53:28.669Z] Checked if tokens are valid: true, expires at: 1794597216139
+[debug] [2026-11-13T18:53:28.669Z] Checked if tokens are valid: true, expires at: 1794597216139
+[debug] [2026-11-13T18:53:28.669Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/kv-cctv-2025/services/firebasehosting.googleapis.com [none]
+[debug] [2026-11-13T18:53:28.670Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/kv-cctv-2025/services/firebasehosting.googleapis.com  x-goog-user-project=kv-cctv-2025
+[debug] [2026-11-13T18:53:31.390Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/kv-cctv-2025/services/firebasehosting.googleapis.com 200
+[debug] [2026-11-13T18:53:31.391Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/kv-cctv-2025/services/firebasehosting.googleapis.com [omitted]
+[debug] [2026-11-13T18:53:31.404Z] Checked if tokens are valid: true, expires at: 1794597216139
+[debug] [2026-11-13T18:53:31.405Z] Checked if tokens are valid: true, expires at: 1794597216139
+[debug] [2026-11-13T18:53:31.405Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/kv-cctv-2025 [none]
+[debug] [2026-11-13T18:53:32.831Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/kv-cctv-2025 200
+[debug] [2026-11-13T18:53:32.832Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/kv-cctv-2025 {"projectId":"kv-cctv-2025","projectNumber":"919589256998","displayName":"first web","name":"projects/kv-cctv-2025","resources":{"hostingSite":"kv-cctv-2025"},"state":"ACTIVE","labels":{"firebase":"enabled"},"etag":"1_da22f24d-354a-4428-b839-1f747a031fea"}
+[info] 
+[info] Your public directory is the folder (relative to your project directory) that
+[info] will contain Hosting assets to be uploaded with firebase deploy. If you
+[info] have a build process for your assets, use your build's output directory.
+[info] 
+[info] 
+[info] i  Didn't detect a .git folder. Assuming C:\Users\ASUS\Desktop\New folder is the project root. 
+[info] i  Authorizing with GitHub to upload your service account to a GitHub repository's secrets store. 
+[info] 
+[info] Visit this URL on this device to log in:
+[info] https://github.com/login/oauth/authorize?client_id=89cf50f02ac6aaed3484&state=313934553&redirect_uri=http%3A%2F%2Flocalhost%3A9005&scope=read%3Auser%20repo%20public_repo
+[info] 
+[info] Waiting for authentication...
+[debug] [2026-11-13T18:55:19.829Z] >>> [apiv2][query] POST https://github.com/login/oauth/access_token [none]
+[debug] [2026-11-13T18:55:19.830Z] >>> [apiv2][body] POST https://github.com/login/oauth/access_token [stream]
+[debug] [2026-11-13T18:55:20.649Z] <<< [apiv2][status] POST https://github.com/login/oauth/access_token 200
+[debug] [2026-11-13T18:55:20.650Z] <<< [apiv2][body] POST https://github.com/login/oauth/access_token {"access_token":"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","token_type":"bearer","scope":"read:user,repo"}
+[debug] [2026-11-13T18:55:20.658Z] >>> [apiv2][query] GET https://api.github.com/user [none]
+[debug] [2026-11-13T18:55:21.338Z] <<< [apiv2][status] GET https://api.github.com/user 200
+[debug] [2026-11-13T18:55:21.339Z] <<< [apiv2][body] GET https://api.github.com/user {"login":"narthuofficial","id":309046187,"node_id":"U_kgDOEmurqw","avatar_url":"https://avatars.githubusercontent.com/u/309046187?v=4","gravatar_id":"","url":"https://api.github.com/users/narthuofficial","html_url":"https://github.com/narthuofficial","followers_url":"https://api.github.com/users/narthuofficial/followers","following_url":"https://api.github.com/users/narthuofficial/following{/other_user}","gists_url":"https://api.github.com/users/narthuofficial/gists{/gist_id}","starred_url":"https://api.github.com/users/narthuofficial/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/narthuofficial/subscriptions","organizations_url":"https://api.github.com/users/narthuofficial/orgs","repos_url":"https://api.github.com/users/narthuofficial/repos","events_url":"https://api.github.com/users/narthuofficial/events{/privacy}","received_events_url":"https://api.github.com/users/narthuofficial/received_events","type":"User","user_view_type":"private","site_admin":false,"name":null,"company":null,"blog":"","location":null,"email":null,"hireable":null,"bio":null,"twitter_username":null,"notification_email":null,"public_repos":0,"public_gists":0,"followers":0,"following":0,"created_at":"2026-07-25T09:21:38Z","updated_at":"2026-11-13T18:55:14Z","private_gists":0,"total_private_repos":1,"owned_private_repos":1,"disk_usage":64,"collaborators":0,"two_factor_authentication":false,"plan":{"name":"free","space":976562499,"collaborators":0,"private_repos":10000}}
+[info] 
+[info] +  Success! Logged into GitHub as narthuofficial 
+[info] 
+[debug] [2026-11-13T18:57:30.857Z] >>> [apiv2][query] GET https://api.github.com/repos/repository/actions/secrets/public-key type=owner
+[debug] [2026-11-13T18:57:31.828Z] <<< [apiv2][status] GET https://api.github.com/repos/repository/actions/secrets/public-key 404
+[debug] [2026-11-13T18:57:31.828Z] <<< [apiv2][body] GET https://api.github.com/repos/repository/actions/secrets/public-key {"message":"Not Found","documentation_url":"https://docs.github.com/rest","status":"404"}
+[info] 
+[info] 
+[error] !  The provided authorization cannot be used with this repository. If this repository is in an organization, did you remember to grant access? 
+[info] 
+[info] i  Action required: Visit this URL to ensure access has been granted to the appropriate organization(s) for the Firebase CLI GitHub OAuth App: 
+[info] https://github.com/settings/connections/applications/89cf50f02ac6aaed3484
+[info] 
+[debug] [2026-11-13T18:57:53.819Z] >>> [apiv2][query] GET https://api.github.com/repos/user/actions/secrets/public-key type=owner
+[debug] [2026-11-13T18:57:54.853Z] <<< [apiv2][status] GET https://api.github.com/repos/user/actions/secrets/public-key 404
+[debug] [2026-11-13T18:57:54.853Z] <<< [apiv2][body] GET https://api.github.com/repos/user/actions/secrets/public-key {"message":"Not Found","documentation_url":"https://docs.github.com/rest","status":"404"}
+[info] 
+[info] 
+[error] !  The provided authorization cannot be used with this repository. If this repository is in an organization, did you remember to grant access? 
+[info] 
+[info] i  Action required: Visit this URL to ensure access has been granted to the appropriate organization(s) for the Firebase CLI GitHub OAuth App: 
+[info] https://github.com/settings/connections/applications/89cf50f02ac6aaed3484
+[info] 
+[debug] [2026-11-13T18:58:21.618Z] >>> [apiv2][query] GET https://api.github.com/repos/user/actions/secrets/public-key type=owner
+[debug] [2026-11-13T18:58:22.400Z] <<< [apiv2][status] GET https://api.github.com/repos/user/actions/secrets/public-key 404
+[debug] [2026-11-13T18:58:22.400Z] <<< [apiv2][body] GET https://api.github.com/repos/user/actions/secrets/public-key {"message":"Not Found","documentation_url":"https://docs.github.com/rest","status":"404"}
+[info] 
+[info] 
+[error] !  The provided authorization cannot be used with this repository. If this repository is in an organization, did you remember to grant access? 
+[info] 
+[info] i  Action required: Visit this URL to ensure access has been granted to the appropriate organization(s) for the Firebase CLI GitHub OAuth App: 
+[info] https://github.com/settings/connections/applications/89cf50f02ac6aaed3484
+[info] 

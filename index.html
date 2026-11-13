@@ -1,0 +1,1334 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KV TECH | IT • Security • Solutions | CCTV & Network Integrator Sri Lanka</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Rajdhani:wght@600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        kvBg: '#FFFFFF',
+                        kvLightSlate: '#F8FAFC',
+                        kvCardBg: '#FFFFFF',
+                        kvBorder: '#E2E8F0',
+                        kvBorderHover: '#CBD5E1',
+                        kvRed: '#DC2626',
+                        kvRedHover: '#B91C1C',
+                        kvRedLight: '#FEF2F2',
+                        kvRedGlow: 'rgba(220, 38, 38, 0.12)',
+                        kvNavy: '#0F172A',
+                        kvSlateText: '#334155',
+                        kvMuted: '#64748B'
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'Inter', 'sans-serif'],
+                        tech: ['Rajdhani', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Modern crisp scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #F8FAFC;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #CBD5E1;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #DC2626;
+        }
+
+        /* Ambient light architectural dot pattern */
+        .bg-grid-light {
+            background-image: radial-gradient(#E2E8F0 1.2px, transparent 1.2px);
+            background-size: 20px 20px;
+        }
+
+        /* Glassmorphism Light Styling */
+        .glass-panel-light {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(226, 232, 240, 0.9);
+        }
+
+        .glass-card-hover {
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .glass-card-hover:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 25px -5px rgba(15, 23, 42, 0.08), 0 8px 10px -6px rgba(15, 23, 42, 0.04);
+            border-color: #DC2626;
+        }
+
+        /* Camera scanline overlay in light mode */
+        .cam-scanline {
+            background: linear-gradient(
+                to bottom,
+                rgba(255,255,255,0),
+                rgba(255,255,255,0) 50%,
+                rgba(15, 23, 42, 0.03) 50%,
+                rgba(15, 23, 42, 0.03)
+            );
+            background-size: 100% 4px;
+        }
+
+        /* Night Mode Visual Simulation */
+        .viewport-night {
+            filter: contrast(1.15) brightness(0.85) sepia(0.2) hue-rotate(180deg);
+        }
+    </style>
+</head>
+<body class="bg-white text-kvNavy font-sans antialiased selection:bg-kvRed selection:text-white overflow-x-hidden">
+
+    <!-- TOP ANNOUNCEMENT BANNER -->
+    <div class="bg-slate-900 text-white text-xs py-2 px-4 border-b border-slate-800">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+            <div class="flex items-center space-x-3 text-slate-300 font-medium">
+                <span class="inline-flex items-center gap-1.5 bg-kvRed/20 text-kvRed font-bold px-2 py-0.5 rounded border border-kvRed/30 text-[11px] tracking-wider uppercase">
+                    <i class="fa-solid fa-shield-halved text-xs"></i> SAFE | SMART | CONNECTED
+                </span>
+                <span class="hidden md:inline text-slate-600">•</span>
+                <span class="hidden md:inline font-semibold text-slate-200">Point Pedro, Northern Province & Islandwide Sri Lanka</span>
+            </div>
+            <div class="flex items-center space-x-4 text-slate-300 font-medium text-xs">
+                <span><i class="fa-solid fa-phone text-kvRed mr-1.5"></i> Call: <strong>+94 77 123 4567</strong></span>
+                <span>•</span>
+                <a href="https://wa.me/94771234567" target="_blank" rel="noopener noreferrer" class="text-emerald-400 hover:underline flex items-center gap-1 font-semibold">
+                    <i class="fa-brands fa-whatsapp text-sm"></i> WhatsApp Support
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- STICKY LIGHT NAVIGATION BAR -->
+    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200/90 transition-all duration-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            
+            <!-- BRAND LOGO -->
+            <a href="#" class="flex items-center space-x-3.5 group" aria-label="KV TECH Homepage">
+                <!-- Custom SVG Monogram Logo: Black 'K' + Red 'V' + CCTV Emblem -->
+                <div class="w-11 h-11 flex items-center justify-center bg-slate-900 rounded-xl border border-slate-800 shadow-md group-hover:scale-105 transition-transform">
+                    <svg class="w-9 h-9" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <!-- K (White) -->
+                        <path d="M22 22H32V42L48 22H60L42 44L62 78H50L32 48V78H22V22Z" fill="white" />
+                        <!-- V (KV Red) -->
+                        <path d="M50 44L60 78H70L82 35H72L65 62L56 35H46L50 44Z" fill="#DC2626" />
+                        <!-- CCTV Lens Emblem -->
+                        <rect x="70" y="24" width="16" height="10" rx="3" fill="white" transform="rotate(-15 70 24)"/>
+                        <circle cx="83" cy="23" r="3" fill="#DC2626"/>
+                        <!-- Underline Swoosh -->
+                        <path d="M15 84 C 40 94, 75 92, 88 82" stroke="#DC2626" stroke-width="4.5" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <div>
+                    <div class="flex items-center leading-none">
+                        <span class="text-2xl font-extrabold tracking-tight font-tech text-slate-900">KV</span>
+                        <span class="text-2xl font-extrabold tracking-tight font-tech text-kvRed ml-1">TECH</span>
+                    </div>
+                    <p class="text-[10px] font-bold tracking-widest text-slate-500 uppercase mt-1">IT • SECURITY • SOLUTIONS</p>
+                </div>
+            </a>
+
+            <!-- DESKTOP NAV LINKS -->
+            <nav class="hidden lg:flex items-center space-x-7 text-sm font-semibold text-slate-700" aria-label="Main Navigation">
+                <a href="#hero" class="hover:text-kvRed transition-colors">Home</a>
+                <a href="#brands" class="hover:text-kvRed transition-colors">Brands</a>
+                <a href="#network" class="hover:text-kvRed transition-colors">4G vs Wi-Fi</a>
+                <a href="#services" class="hover:text-kvRed transition-colors">Services</a>
+                <a href="#estimator" class="hover:text-kvRed transition-colors">Package Estimator</a>
+                <a href="#why-us" class="hover:text-kvRed transition-colors">Why KV Tech</a>
+            </nav>
+
+            <!-- ACTION BUTTONS -->
+            <div class="hidden sm:flex items-center space-x-3">
+                <a href="https://wa.me/94771234567?text=Hello%20KV%20Tech,%20I%20need%20a%20security%20quote." target="_blank" rel="noopener noreferrer" class="px-3.5 py-2 rounded-lg bg-emerald-50 text-emerald-700 hover:bg-emerald-100 transition-colors border border-emerald-200 text-xs font-bold flex items-center gap-1.5">
+                    <i class="fa-brands fa-whatsapp text-sm text-emerald-600"></i> WhatsApp
+                </a>
+                <a href="#contact" class="px-5 py-2.5 rounded-xl bg-kvRed hover:bg-kvRedHover text-white font-bold text-xs tracking-wide shadow-lg shadow-red-500/25 transition-all flex items-center gap-2">
+                    <i class="fa-solid fa-calculator"></i> Get Free Quote
+                </a>
+            </div>
+
+            <!-- MOBILE MENU BUTTON -->
+            <button type="button" id="mobileMenuBtn" aria-label="Toggle navigation menu" aria-expanded="false" class="lg:hidden text-slate-700 hover:text-kvRed focus:outline-none p-2 rounded-lg border border-slate-200">
+                <i class="fa-solid fa-bars text-xl"></i>
+            </button>
+        </div>
+
+        <!-- MOBILE MENU DROPDOWN -->
+        <div id="mobileMenu" class="hidden lg:hidden bg-white border-b border-slate-200 px-6 py-4 space-y-3 shadow-xl">
+            <a href="#hero" class="mobile-nav-link block text-slate-700 hover:text-kvRed font-medium py-1">Home</a>
+            <a href="#brands" class="mobile-nav-link block text-slate-700 hover:text-kvRed font-medium py-1">Brands (Hikvision, Dahua, EZVIZ, IMOU)</a>
+            <a href="#network" class="mobile-nav-link block text-slate-700 hover:text-kvRed font-medium py-1">4G SIM vs Wi-Fi vs PoE</a>
+            <a href="#services" class="mobile-nav-link block text-slate-700 hover:text-kvRed font-medium py-1">Services</a>
+            <a href="#estimator" class="mobile-nav-link block text-slate-700 hover:text-kvRed font-medium py-1">Package Cost Estimator</a>
+            <a href="#contact" class="mobile-nav-link block w-full text-center px-4 py-2.5 rounded-xl bg-kvRed text-white font-bold text-sm">
+                Request Free Site Survey
+            </a>
+        </div>
+    </header>
+
+    <!-- EXECUTIVE HERO SECTION -->
+    <section id="hero" class="relative bg-gradient-to-b from-slate-50 via-white to-slate-50 py-16 lg:py-20 border-b border-slate-200/80 bg-grid-light overflow-hidden">
+        
+        <!-- Decorative Ambient Red Slanted Accent -->
+        <div class="absolute -top-32 -right-32 w-96 h-96 bg-kvRed/5 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left Column: Copy & Value Proposition -->
+                <div class="lg:col-span-7 space-y-6">
+                    
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900 text-white text-xs font-bold tracking-wider uppercase shadow-sm">
+                        <span class="w-2 h-2 rounded-full bg-kvRed animate-ping"></span>
+                        <span>Authorized Security & IT Integrator • Sri Lanka</span>
+                    </div>
+
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 leading-[1.12]">
+                        Your Trusted Partner in <br>
+                        <span class="bg-gradient-to-r from-slate-900 via-slate-800 to-kvRed bg-clip-text text-transparent">
+                            IT & Security Solutions
+                        </span>
+                    </h1>
+
+                    <p class="text-slate-600 text-base sm:text-lg max-w-2xl leading-relaxed font-normal">
+                        <strong class="text-slate-900 font-semibold">Technology for a Safer Tomorrow.</strong> We specialize in high-definition CCTV camera installations (4G SIM standalone, Wireless Wi-Fi, and Turbo HD/IP PoE), biometric access control, computer repairs, structured networking, and POS systems for residential, commercial, and agricultural properties across Point Pedro, Northern Province, and Islandwide.
+                    </p>
+
+                    <!-- CTAs -->
+                    <div class="flex flex-col sm:flex-row gap-4 pt-2">
+                        <a href="#estimator" class="px-7 py-3.5 rounded-xl bg-kvRed hover:bg-kvRedHover text-white font-bold text-sm shadow-xl shadow-red-500/25 transition-all flex items-center justify-center gap-2 group">
+                            <span>Configure CCTV Package</span>
+                            <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                        </a>
+                        <a href="#brands" class="px-7 py-3.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold text-sm border border-slate-300 transition-all text-center">
+                            Explore Authorized Brands
+                        </a>
+                    </div>
+
+                    <!-- Trust Stats Bar -->
+                    <div class="pt-8 grid grid-cols-3 gap-4 border-t border-slate-200">
+                        <div>
+                            <div class="text-2xl sm:text-3xl font-extrabold text-slate-900 font-tech">500+</div>
+                            <p class="text-xs text-slate-500 font-semibold uppercase tracking-wider mt-0.5">Completed Projects</p>
+                        </div>
+                        <div>
+                            <div class="text-2xl sm:text-3xl font-extrabold text-kvRed font-tech">3-YEAR</div>
+                            <p class="text-xs text-slate-500 font-semibold uppercase tracking-wider mt-0.5">Official Warranty</p>
+                        </div>
+                        <div>
+                            <div class="text-2xl sm:text-3xl font-extrabold text-slate-900 font-tech">24/7</div>
+                            <p class="text-xs text-slate-500 font-semibold uppercase tracking-wider mt-0.5">Local Technical Support</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Right Column: Interactive Light-Mode Live Security Monitor Card -->
+                <div class="lg:col-span-5">
+                    <div class="bg-white border border-slate-200 rounded-3xl p-5 shadow-2xl shadow-slate-200/80 relative">
+                        
+                        <!-- Top Monitor Header -->
+                        <div class="flex items-center justify-between pb-3 border-b border-slate-200 text-xs font-mono">
+                            <div class="flex items-center space-x-2">
+                                <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                                <span class="text-slate-800 font-bold">KV-SURVEILLANCE-HUB</span>
+                            </div>
+                            <span id="heroNetworkBadge" class="bg-red-50 text-kvRed border border-red-200 px-2 py-0.5 rounded text-[10px] font-bold">
+                                <i class="fa-solid fa-tower-cell mr-1"></i> 4G SIM ONLINE
+                            </span>
+                        </div>
+
+                        <!-- Simulated Camera Viewport -->
+                        <div id="heroCamViewport" class="relative my-3 rounded-2xl overflow-hidden bg-slate-900 border border-slate-800 aspect-video cam-scanline flex flex-col justify-between p-4 shadow-inner transition-all duration-300">
+                            
+                            <!-- Header Overlay -->
+                            <div class="flex justify-between items-start text-[11px] font-mono text-emerald-400 z-10">
+                                <span id="heroCamName" class="bg-slate-950/80 backdrop-blur px-2.5 py-1 rounded-md border border-slate-800 flex items-center gap-2">
+                                    <span class="w-2 h-2 rounded-full bg-red-500 animate-ping"></span>
+                                    <span>CAM 01 - MAIN ENTRANCE (4K COLORVU)</span>
+                                </span>
+                                <span class="bg-slate-950/80 px-2 py-1 rounded text-slate-300 font-bold">30 FPS</span>
+                            </div>
+
+                            <!-- Camera Graphics Wireframe Overlay -->
+                            <div class="absolute inset-0 flex items-center justify-center opacity-30 pointer-events-none">
+                                <div class="w-56 h-36 border border-dashed border-emerald-400 rounded-xl flex flex-col items-center justify-center relative">
+                                    <span class="absolute top-2 left-2 text-[10px] font-mono text-emerald-300 font-bold">AI HUMAN &amp; VEHICLE DETECTED</span>
+                                    <i class="fa-solid fa-camera-rotate text-5xl text-slate-400"></i>
+                                </div>
+                            </div>
+
+                            <!-- Footer Overlay -->
+                            <div class="flex justify-between items-end text-[10px] font-mono z-10">
+                                <div id="heroNightModeBadge" class="bg-slate-950/80 px-2.5 py-1 rounded text-amber-300 border border-slate-800 flex items-center gap-1">
+                                    <i class="fa-solid fa-sun text-amber-500"></i> COLORVU DAYLIGHT MODE
+                                </div>
+                                <div class="bg-slate-950/80 text-slate-300 px-2 py-1 rounded">
+                                    H.265+ SMART ENCODING
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Camera Feeds Switcher -->
+                        <div class="grid grid-cols-3 gap-2 pt-1 text-center font-mono">
+                            <button type="button" onclick="switchHeroCam('cam1')" id="btnHeroCam1" class="hero-cam-btn px-2 py-2 rounded-xl bg-kvRed text-white text-xs font-bold transition-all shadow-sm">
+                                CAM 1 (4G SIM)
+                            </button>
+                            <button type="button" onclick="switchHeroCam('cam2')" id="btnHeroCam2" class="hero-cam-btn px-2 py-2 rounded-xl bg-slate-100 text-slate-700 hover:bg-slate-200 text-xs font-bold transition-all border border-slate-200">
+                                CAM 2 (Wi-Fi Dome)
+                            </button>
+                            <button type="button" onclick="switchHeroCam('cam3')" id="btnHeroCam3" class="hero-cam-btn px-2 py-2 rounded-xl bg-slate-100 text-slate-700 hover:bg-slate-200 text-xs font-bold transition-all border border-slate-200">
+                                CAM 3 (PoE NVR)
+                            </button>
+                        </div>
+
+                        <!-- Day / Night Toggle Control -->
+                        <div class="mt-4 pt-3 border-t border-slate-200 flex items-center justify-between text-xs">
+                            <span class="text-slate-600 font-semibold">Night Vision Mode Preview:</span>
+                            <div class="inline-flex rounded-lg bg-slate-100 p-1 border border-slate-200">
+                                <button type="button" onclick="toggleHeroNight(false)" id="btnDayMode" class="px-3 py-1 rounded-md bg-white text-slate-900 font-bold shadow-sm">Day Color</button>
+                                <button type="button" onclick="toggleHeroNight(true)" id="btnNightMode" class="px-3 py-1 rounded-md text-slate-600 font-medium">Night ColorVu</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- AUTHORIZED BRANDS SHOWCASE & INTERACTIVE FILTER -->
+    <section id="brands" class="py-16 bg-white border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+                <div>
+                    <span class="text-kvRed text-xs font-extrabold tracking-widest uppercase">Genuine Equipment Guarantee</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 font-tech mt-1">
+                        Authorized Brands We Install &amp; Maintain
+                    </h2>
+                    <p class="text-slate-600 text-sm mt-2 max-w-2xl">
+                        We source directly from official channels in Sri Lanka with 3-Year Company Warranties. Select a brand below to view camera models and features.
+                    </p>
+                </div>
+
+                <!-- Brand Filter Selector Tabs -->
+                <div class="mt-6 md:mt-0 flex flex-wrap gap-2">
+                    <button type="button" onclick="filterBrands('all')" class="brand-tab px-4 py-2 rounded-xl text-xs font-bold bg-slate-900 text-white shadow-sm transition-all">All Brands</button>
+                    <button type="button" onclick="filterBrands('hikvision')" class="brand-tab px-4 py-2 rounded-xl text-xs font-bold bg-slate-100 text-slate-700 border border-slate-200 hover:border-kvRed transition-all">Hikvision</button>
+                    <button type="button" onclick="filterBrands('dahua')" class="brand-tab px-4 py-2 rounded-xl text-xs font-bold bg-slate-100 text-slate-700 border border-slate-200 hover:border-kvRed transition-all">Dahua</button>
+                    <button type="button" onclick="filterBrands('ezviz')" class="brand-tab px-4 py-2 rounded-xl text-xs font-bold bg-slate-100 text-slate-700 border border-slate-200 hover:border-kvRed transition-all">EZVIZ</button>
+                    <button type="button" onclick="filterBrands('imou')" class="brand-tab px-4 py-2 rounded-xl text-xs font-bold bg-slate-100 text-slate-700 border border-slate-200 hover:border-kvRed transition-all">IMOU</button>
+                </div>
+            </div>
+
+            <!-- Brand Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <!-- Brand 1: HIKVISION -->
+                <div class="brand-card hikvision bg-slate-50 border border-slate-200 rounded-2xl p-6 glass-card-hover flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="text-xs font-extrabold font-tech bg-red-100 text-kvRed px-2.5 py-1 rounded-md border border-red-200">#1 GLOBAL LEADER</span>
+                            <span class="text-[11px] font-mono font-bold text-slate-500">3-Yr Warranty</span>
+                        </div>
+                        <h3 class="text-2xl font-extrabold text-slate-900 font-tech">HIKVISION</h3>
+                        <p class="text-xs font-bold text-kvRed uppercase tracking-wider mb-3">Enterprise &amp; ColorVu AI</p>
+                        <p class="text-xs text-slate-600 leading-relaxed mb-4">
+                            Industry benchmark for 24/7 ColorVu full-color night vision, AcuSense AI human detection, Turbo HD &amp; IP NVR systems.
+                        </p>
+                        <div class="space-y-1.5 text-xs font-semibold text-slate-700 border-t border-slate-200 pt-3">
+                            <div class="flex items-center"><i class="fa-solid fa-check text-kvRed mr-2"></i> ColorVu 3K / 4K Cameras</div>
+                            <div class="flex items-center"><i class="fa-solid fa-check text-kvRed mr-2"></i> AcuSense AI Human Filtering</div>
+                            <div class="flex items-center"><i class="fa-solid fa-check text-kvRed mr-2"></i> Mobile App: <strong>Hik-Connect</strong></div>
+                        </div>
+                    </div>
+                    <button type="button" onclick="selectBrandInEstimator('Hikvision')" class="mt-6 w-full py-2.5 rounded-xl bg-white border border-slate-300 hover:border-kvRed hover:text-kvRed font-bold text-xs text-slate-800 transition-colors shadow-sm">
+                        Select Hikvision Package
+                    </button>
+                </div>
+
+                <!-- Brand 2: DAHUA -->
+                <div class="brand-card dahua bg-slate-50 border border-slate-200 rounded-2xl p-6 glass-card-hover flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="text-xs font-extrabold font-tech bg-slate-200 text-slate-800 px-2.5 py-1 rounded-md">DUAL LIGHT TECH</span>
+                            <span class="text-[11px] font-mono font-bold text-slate-500">3-Yr Warranty</span>
+                        </div>
+                        <h3 class="text-2xl font-extrabold text-slate-900 font-tech">DAHUA</h3>
+                        <p class="text-xs font-bold text-kvRed uppercase tracking-wider mb-3">HDCVI &amp; WizSense AI</p>
+                        <p class="text-xs text-slate-600 leading-relaxed mb-4">
+                            High-performance HDCVI and IP surveillance with Smart Dual Illuminators, active deterrence sirens, and long-range transmission.
+                        </p>
+                        <div class="space-y-1.5 text-xs font-semibold text-slate-700 border-t border-slate-200 pt-3">
+                            <div class="flex items-center"><i class="fa-solid fa-check text-kvRed mr-2"></i> Smart Dual Light Night Vision</div>
+                            <div class="flex items-center"><i class="fa-solid fa-check text-kvRed mr-2"></i> Active Deterrence Siren Cams</div>
+                            <div class="flex items-center"><i class="fa-solid fa-check text-kvRed mr-2"></i> Mobile App: <strong>DMSS</strong></div>
+                        </div>
+                    </div>
+                    <button type="button" onclick="selectBrandInEstimator('Dahua')" class="mt-6 w-full py-2.5 rounded-xl bg-white border border-slate-300 hover:border-kvRed hover:text-kvRed font-bold text-xs text-slate-800 transition-colors shadow-sm">
+                        Select Dahua Package
+                    </button>
+                </div>
+
+                <!-- Brand 3: EZVIZ -->
+                <div class="brand-card ezviz bg-slate-50 border border-slate-200 rounded-2xl p-6 glass-card-hover flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="text-xs font-extrabold font-tech bg-emerald-100 text-emerald-800 px-2.5 py-1 rounded-md border border-emerald-200">4G &amp; SOLAR SPECIALIST</span>
+                            <span class="text-[11px] font-mono font-bold text-slate-500">2-Yr Warranty</span>
+                        </div>
+                        <h3 class="text-2xl font-extrabold text-slate-900 font-tech">EZVIZ</h3>
+                        <p class="text-xs font-bold text-kvRed uppercase tracking-wider mb-3">Smart Wireless &amp; 4G Solar</p>
+                        <p class="text-xs text-slate-600 leading-relaxed mb-4">
+                            Top choice for standalone 4G LTE SIM battery/solar cameras for remote land, pan-tilt 360° Wi-Fi home cameras, and smart doorbells.
+                        </p>
+                        <div class="space-y-1.5 text-xs font-semibold text-slate-700 border-t border-slate-200 pt-3">
+                            <div class="flex items-center"><i class="fa-solid fa-check text-kvRed mr-2"></i> 4G SIM + Solar Panel Cams</div>
+                            <div class="flex items-center"><i class="fa-solid fa-check text-kvRed mr-2"></i> 360° Pan-Tilt Wireless Tracking</div>
+                            <div class="flex items-center"><i class="fa-solid fa-check text-kvRed mr-2"></i> Mobile App: <strong>EZVIZ App</strong></div>
+                        </div>
+                    </div>
+                    <button type="button" onclick="selectBrandInEstimator('EZVIZ')" class="mt-6 w-full py-2.5 rounded-xl bg-white border border-slate-300 hover:border-kvRed hover:text-kvRed font-bold text-xs text-slate-800 transition-colors shadow-sm">
+                        Select EZVIZ Package
+                    </button>
+                </div>
+
+                <!-- Brand 4: IMOU -->
+                <div class="brand-card imou bg-slate-50 border border-slate-200 rounded-2xl p-6 glass-card-hover flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="text-xs font-extrabold font-tech bg-amber-100 text-amber-800 px-2.5 py-1 rounded-md border border-amber-200">SMART HOME &amp; OUTDOOR</span>
+                            <span class="text-[11px] font-mono font-bold text-slate-500">2-Yr Warranty</span>
+                        </div>
+                        <h3 class="text-2xl font-extrabold text-slate-900 font-tech">IMOU</h3>
+                        <p class="text-xs font-bold text-kvRed uppercase tracking-wider mb-3">Active Defense Wireless</p>
+                        <p class="text-xs text-slate-600 leading-relaxed mb-4">
+                            Cost-effective consumer Wi-Fi security with Cruiser 360° outdoor floodlight cameras, AI human tracking, and 2-way voice chat.
+                        </p>
+                        <div class="space-y-1.5 text-xs font-semibold text-slate-700 border-t border-slate-200 pt-3">
+                            <div class="flex items-center"><i class="fa-solid fa-check text-kvRed mr-2"></i> Cruiser 360° Floodlight Cams</div>
+                            <div class="flex items-center"><i class="fa-solid fa-check text-kvRed mr-2"></i> Two-Way Audio Talk Back</div>
+                            <div class="flex items-center"><i class="fa-solid fa-check text-kvRed mr-2"></i> Mobile App: <strong>Imou Life</strong></div>
+                        </div>
+                    </div>
+                    <button type="button" onclick="selectBrandInEstimator('IMOU')" class="mt-6 w-full py-2.5 rounded-xl bg-white border border-slate-300 hover:border-kvRed hover:text-kvRed font-bold text-xs text-slate-800 transition-colors shadow-sm">
+                        Select IMOU Package
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CONNECTIVITY & NETWORK ARCHITECTURE COMPARISON SECTION -->
+    <section id="network" class="py-20 bg-slate-50 border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="px-3 py-1 rounded-full bg-red-100 text-kvRed text-xs font-extrabold uppercase tracking-wider border border-red-200">
+                    Network Selection Guide
+                </span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 font-tech mt-3">
+                    Choose The Right Network Architecture
+                </h2>
+                <p class="text-slate-600 text-sm mt-3 leading-relaxed">
+                    Not sure whether to choose 4G SIM standalone, home Wi-Fi, or wired PoE/DVR? Compare how each technology works for your property.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- Option 1: 4G LTE SIM Network -->
+                <div class="bg-white border-2 border-slate-200 rounded-3xl p-7 glass-card-hover flex flex-col justify-between relative overflow-hidden">
+                    <div class="absolute top-0 right-0 bg-red-600 text-white text-[10px] font-extrabold px-3 py-1 rounded-bl-xl uppercase tracking-wider">
+                        NO ROUTER NEEDED
+                    </div>
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-red-50 border border-red-200 flex items-center justify-center text-kvRed text-2xl mb-6">
+                            <i class="fa-solid fa-tower-cell"></i>
+                        </div>
+                        <h3 class="text-2xl font-extrabold text-slate-900 font-tech">4G LTE SIM Network</h3>
+                        <p class="text-xs font-bold text-kvRed uppercase tracking-wider mb-4">Standalone / Remote Lands / Solar</p>
+                        <p class="text-xs text-slate-600 leading-relaxed mb-6">
+                            Inserts any Sri Lankan 4G Data SIM (Dialog, Mobitel, Hutch). Ideal for farm lands, coconut estates, construction sites, or remote houses without Fiber/SLT internet.
+                        </p>
+                        <ul class="space-y-2.5 text-xs text-slate-700 mb-6 font-medium">
+                            <li class="flex items-center"><i class="fa-solid fa-circle-check text-emerald-500 mr-2 text-sm"></i> Zero Wi-Fi Router Required</li>
+                            <li class="flex items-center"><i class="fa-solid fa-circle-check text-emerald-500 mr-2 text-sm"></i> Works with Solar Panel + Battery</li>
+                            <li class="flex items-center"><i class="fa-solid fa-circle-check text-emerald-500 mr-2 text-sm"></i> Direct Phone Alerts via 4G App</li>
+                            <li class="flex items-center"><i class="fa-solid fa-circle-check text-emerald-500 mr-2 text-sm"></i> MicroSD Card + Cloud Storage</li>
+                        </ul>
+                    </div>
+                    <button type="button" onclick="selectNetInEstimator('4G SIM')" class="w-full py-3 rounded-xl bg-slate-900 text-white font-bold text-xs hover:bg-kvRed transition-colors shadow-sm">
+                        Select 4G SIM Setup
+                    </button>
+                </div>
+
+                <!-- Option 2: Smart Wi-Fi Wireless -->
+                <div class="bg-white border-2 border-slate-200 rounded-3xl p-7 glass-card-hover flex flex-col justify-between relative">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-slate-100 border border-slate-200 flex items-center justify-center text-slate-900 text-2xl mb-6">
+                            <i class="fa-solid fa-wifi"></i>
+                        </div>
+                        <h3 class="text-2xl font-extrabold text-slate-900 font-tech">Smart Wi-Fi Wireless</h3>
+                        <p class="text-xs font-bold text-kvRed uppercase tracking-wider mb-4">Home &amp; Shop Wi-Fi Routers</p>
+                        <p class="text-xs text-slate-600 leading-relaxed mb-6">
+                            Connects directly to your existing home Dialog 4G, SLT Fiber, or LankaBell Wi-Fi router. Quick, clean installation with minimal drilling and zero long cables.
+                        </p>
+                        <ul class="space-y-2.5 text-xs text-slate-700 mb-6 font-medium">
+                            <li class="flex items-center"><i class="fa-solid fa-circle-check text-emerald-500 mr-2 text-sm"></i> Clean Wire-Free Aesthetics</li>
+                            <li class="flex items-center"><i class="fa-solid fa-circle-check text-emerald-500 mr-2 text-sm"></i> 2-Way Built-in Audio Mic &amp; Speaker</li>
+                            <li class="flex items-center"><i class="fa-solid fa-circle-check text-emerald-500 mr-2 text-sm"></i> 360° Smartphone Pan-Tilt Control</li>
+                            <li class="flex items-center"><i class="fa-solid fa-circle-check text-emerald-500 mr-2 text-sm"></i> Instant Motion Alarm Push Notes</li>
+                        </ul>
+                    </div>
+                    <button type="button" onclick="selectNetInEstimator('Wi-Fi Wireless')" class="w-full py-3 rounded-xl bg-slate-900 text-white font-bold text-xs hover:bg-kvRed transition-colors shadow-sm">
+                        Select Smart Wi-Fi Setup
+                    </button>
+                </div>
+
+                <!-- Option 3: Wired PoE / Turbo HD DVR-NVR -->
+                <div class="bg-white border-2 border-slate-200 rounded-3xl p-7 glass-card-hover flex flex-col justify-between relative">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-slate-100 border border-slate-200 flex items-center justify-center text-slate-900 text-2xl mb-6">
+                            <i class="fa-solid fa-network-wired"></i>
+                        </div>
+                        <h3 class="text-2xl font-extrabold text-slate-900 font-tech">Wired PoE / Turbo HD</h3>
+                        <p class="text-xs font-bold text-kvRed uppercase tracking-wider mb-4">Maximum Commercial Reliability</p>
+                        <p class="text-xs text-slate-600 leading-relaxed mb-6">
+                            Heavy-duty coaxial Cat6 wired system with a dedicated DVR/NVR recorder and surveillance hard drive. Unbeatable 24/7 continuous non-stop recording.
+                        </p>
+                        <ul class="space-y-2.5 text-xs text-slate-700 mb-6 font-medium">
+                            <li class="flex items-center"><i class="fa-solid fa-circle-check text-emerald-500 mr-2 text-sm"></i> 24/7 Continuous HDD Recording (30+ Days)</li>
+                            <li class="flex items-center"><i class="fa-solid fa-circle-check text-emerald-500 mr-2 text-sm"></i> Zero Wireless Interference or Signal Drop</li>
+                            <li class="flex items-center"><i class="fa-solid fa-circle-check text-emerald-500 mr-2 text-sm"></i> Heavy Duty Weatherproof Metal Cams</li>
+                            <li class="flex items-center"><i class="fa-solid fa-circle-check text-emerald-500 mr-2 text-sm"></i> Multi-Screen TV &amp; Monitor Live Viewing</li>
+                        </ul>
+                    </div>
+                    <button type="button" onclick="selectNetInEstimator('Wired PoE / Turbo HD')" class="w-full py-3 rounded-xl bg-slate-900 text-white font-bold text-xs hover:bg-kvRed transition-colors shadow-sm">
+                        Select Wired DVR/NVR Setup
+                    </button>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 6 CORE DIVISIONS GRID -->
+    <section id="services" class="py-20 bg-white border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-kvRed text-xs font-extrabold tracking-widest uppercase">Integrated IT &amp; Security</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 font-tech mt-2">
+                    Our Core Service Divisions
+                </h2>
+                <div class="w-16 h-1 bg-kvRed mx-auto mt-3 rounded-full"></div>
+                <p class="text-slate-600 text-sm mt-4">
+                    Providing end-to-end technology solutions across Northern Province and Sri Lanka.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Division 1: CCTV -->
+                <div class="bg-slate-50 border border-slate-200 rounded-3xl p-7 glass-card-hover flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-start mb-6">
+                            <div class="w-12 h-12 rounded-xl bg-white border border-slate-300 flex items-center justify-center text-kvRed text-xl font-bold shadow-sm">
+                                <i class="fa-solid fa-video"></i>
+                            </div>
+                            <span class="text-xs font-mono font-bold bg-slate-200 text-slate-700 px-2.5 py-1 rounded-md">DIVISION 01</span>
+                        </div>
+                        <h3 class="text-2xl font-extrabold text-slate-900 font-tech mb-1">CCTV</h3>
+                        <p class="text-xs font-bold text-kvRed uppercase tracking-wider mb-4">Installation &amp; Maintenance</p>
+                        <p class="text-xs text-slate-600 leading-relaxed mb-6">
+                            Custom 4G SIM standalone, Wi-Fi wireless, and IP PoE surveillance fitting with ColorVu 24/7 full-color night vision, remote phone access, and DVR repair.
+                        </p>
+                    </div>
+                    <button type="button" onclick="scrollToQuoteWithService('CCTV Installation & Maintenance')" class="w-full py-2.5 rounded-xl bg-white border border-slate-300 hover:border-kvRed hover:text-kvRed font-bold text-xs text-slate-800 transition-colors shadow-sm">
+                        Request CCTV Consultation
+                    </button>
+                </div>
+
+                <!-- Division 2: ACCESS CONTROL -->
+                <div class="bg-slate-50 border border-slate-200 rounded-3xl p-7 glass-card-hover flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-start mb-6">
+                            <div class="w-12 h-12 rounded-xl bg-white border border-slate-300 flex items-center justify-center text-kvRed text-xl font-bold shadow-sm">
+                                <i class="fa-solid fa-fingerprint"></i>
+                            </div>
+                            <span class="text-xs font-mono font-bold bg-slate-200 text-slate-700 px-2.5 py-1 rounded-md">DIVISION 02</span>
+                        </div>
+                        <h3 class="text-2xl font-extrabold text-slate-900 font-tech mb-1">ACCESS CONTROL</h3>
+                        <p class="text-xs font-bold text-kvRed uppercase tracking-wider mb-4">Smart &amp; Secure Entry</p>
+                        <p class="text-xs text-slate-600 leading-relaxed mb-6">
+                            Biometric fingerprint scanners, AI facial recognition terminals, RFID keycards, electromagnetic glass door locks, and staff attendance software.
+                        </p>
+                    </div>
+                    <button type="button" onclick="scrollToQuoteWithService('Access Control Systems')" class="w-full py-2.5 rounded-xl bg-white border border-slate-300 hover:border-kvRed hover:text-kvRed font-bold text-xs text-slate-800 transition-colors shadow-sm">
+                        Request Access Control
+                    </button>
+                </div>
+
+                <!-- Division 3: COMPUTER -->
+                <div class="bg-slate-50 border border-slate-200 rounded-3xl p-7 glass-card-hover flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-start mb-6">
+                            <div class="w-12 h-12 rounded-xl bg-white border border-slate-300 flex items-center justify-center text-kvRed text-xl font-bold shadow-sm">
+                                <i class="fa-solid fa-desktop"></i>
+                            </div>
+                            <span class="text-xs font-mono font-bold bg-slate-200 text-slate-700 px-2.5 py-1 rounded-md">DIVISION 03</span>
+                        </div>
+                        <h3 class="text-2xl font-extrabold text-slate-900 font-tech mb-1">COMPUTER</h3>
+                        <p class="text-xs font-bold text-kvRed uppercase tracking-wider mb-4">Hardware &amp; Software Sales / Repair</p>
+                        <p class="text-xs text-slate-600 leading-relaxed mb-6">
+                            New &amp; refurbished laptops/PCs (Dell, HP, Lenovo), high-speed NVMe SSD upgrades, RAM installation, motherboard repairs, and OS formatting.
+                        </p>
+                    </div>
+                    <button type="button" onclick="scrollToQuoteWithService('Computer Sales & Repair')" class="w-full py-2.5 rounded-xl bg-white border border-slate-300 hover:border-kvRed hover:text-kvRed font-bold text-xs text-slate-800 transition-colors shadow-sm">
+                        Request Computer Service
+                    </button>
+                </div>
+
+                <!-- Division 4: NETWORKING -->
+                <div class="bg-slate-50 border border-slate-200 rounded-3xl p-7 glass-card-hover flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-start mb-6">
+                            <div class="w-12 h-12 rounded-xl bg-white border border-slate-300 flex items-center justify-center text-kvRed text-xl font-bold shadow-sm">
+                                <i class="fa-solid fa-network-wired"></i>
+                            </div>
+                            <span class="text-xs font-mono font-bold bg-slate-200 text-slate-700 px-2.5 py-1 rounded-md">DIVISION 04</span>
+                        </div>
+                        <h3 class="text-2xl font-extrabold text-slate-900 font-tech mb-1">NETWORKING</h3>
+                        <p class="text-xs font-bold text-kvRed uppercase tracking-wider mb-4">Wi-Fi &amp; LAN Solutions</p>
+                        <p class="text-xs text-slate-600 leading-relaxed mb-6">
+                            Structured Cat6 LAN cabling, server rack installations, outdoor long-range point-to-point Wi-Fi bridges, and TP-Link / MikroTik router setups.
+                        </p>
+                    </div>
+                    <button type="button" onclick="scrollToQuoteWithService('Networking & Wi-Fi Setup')" class="w-full py-2.5 rounded-xl bg-white border border-slate-300 hover:border-kvRed hover:text-kvRed font-bold text-xs text-slate-800 transition-colors shadow-sm">
+                        Request Networking Quote
+                    </button>
+                </div>
+
+                <!-- Division 5: WEBSITE & POS -->
+                <div class="bg-slate-50 border border-slate-200 rounded-3xl p-7 glass-card-hover flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-start mb-6">
+                            <div class="w-12 h-12 rounded-xl bg-white border border-slate-300 flex items-center justify-center text-kvRed text-xl font-bold shadow-sm">
+                                <i class="fa-solid fa-cart-shopping"></i>
+                            </div>
+                            <span class="text-xs font-mono font-bold bg-slate-200 text-slate-700 px-2.5 py-1 rounded-md">DIVISION 05</span>
+                        </div>
+                        <h3 class="text-2xl font-extrabold text-slate-900 font-tech mb-1">WEBSITE &amp; POS</h3>
+                        <p class="text-xs font-bold text-kvRed uppercase tracking-wider mb-4">Business Growth Online &amp; Offline</p>
+                        <p class="text-xs text-slate-600 leading-relaxed mb-6">
+                            Supermarket and retail POS touch billing hardware, barcode printers, thermal receipt machines, inventory software, and corporate web development.
+                        </p>
+                    </div>
+                    <button type="button" onclick="scrollToQuoteWithService('Website & POS Solutions')" class="w-full py-2.5 rounded-xl bg-white border border-slate-300 hover:border-kvRed hover:text-kvRed font-bold text-xs text-slate-800 transition-colors shadow-sm">
+                        Request POS / Web Quote
+                    </button>
+                </div>
+
+                <!-- Division 6: TECH SUPPORT -->
+                <div class="bg-slate-50 border border-slate-200 rounded-3xl p-7 glass-card-hover flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-start mb-6">
+                            <div class="w-12 h-12 rounded-xl bg-white border border-slate-300 flex items-center justify-center text-kvRed text-xl font-bold shadow-sm">
+                                <i class="fa-solid fa-headset"></i>
+                            </div>
+                            <span class="text-xs font-mono font-bold bg-slate-200 text-slate-700 px-2.5 py-1 rounded-md">DIVISION 06</span>
+                        </div>
+                        <h3 class="text-2xl font-extrabold text-slate-900 font-tech mb-1">TECH SUPPORT</h3>
+                        <p class="text-xs font-bold text-kvRed uppercase tracking-wider mb-4">Installation &amp; Maintenance</p>
+                        <p class="text-xs text-slate-600 leading-relaxed mb-6">
+                            Annual Maintenance Contracts (AMC), on-site emergency call-outs, CCTV cable rewiring, system firmware updates, and remote troubleshooting.
+                        </p>
+                    </div>
+                    <button type="button" onclick="scrollToQuoteWithService('Tech Support & AMC Maintenance')" class="w-full py-2.5 rounded-xl bg-white border border-slate-300 hover:border-kvRed hover:text-kvRed font-bold text-xs text-slate-800 transition-colors shadow-sm">
+                        Request AMC Support
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- INTERACTIVE CCTV PACKAGE & COST CONFIGURATOR (IN LKR) -->
+    <section id="estimator" class="py-20 bg-slate-50 border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto mb-14">
+                <span class="px-3.5 py-1.5 rounded-full bg-red-100 text-kvRed text-xs font-extrabold uppercase tracking-wider border border-red-200">
+                    Live Cost Calculator (LKR)
+                </span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 font-tech mt-3">
+                    Configure Your CCTV Package &amp; Get Instant Estimate
+                </h2>
+                <p class="text-slate-600 text-sm mt-2">
+                    Select your preferred brand, network architecture (4G SIM / Wi-Fi / Wired PoE), camera count, and features below.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                
+                <!-- Controls Column -->
+                <div class="lg:col-span-7 bg-white border border-slate-200 rounded-3xl p-6 sm:p-8 shadow-sm space-y-6">
+                    
+                    <!-- Step 1: Brand Selection -->
+                    <div>
+                        <label class="block text-xs font-extrabold uppercase text-slate-800 mb-3 tracking-wider">
+                            Step 1: Preferred Hardware Brand
+                        </label>
+                        <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
+                            <button type="button" onclick="setEstBrand('Hikvision')" id="estBrandHik" data-brand="Hikvision" class="est-brand-btn py-3 px-3 rounded-xl border-2 border-kvRed bg-red-50 text-slate-900 font-extrabold text-xs text-center font-tech transition-all">Hikvision</button>
+                            <button type="button" onclick="setEstBrand('Dahua')" id="estBrandDahua" data-brand="Dahua" class="est-brand-btn py-3 px-3 rounded-xl border border-slate-200 bg-white text-slate-700 hover:border-slate-300 font-extrabold text-xs text-center font-tech transition-all">Dahua</button>
+                            <button type="button" onclick="setEstBrand('EZVIZ')" id="estBrandEZVIZ" data-brand="EZVIZ" class="est-brand-btn py-3 px-3 rounded-xl border border-slate-200 bg-white text-slate-700 hover:border-slate-300 font-extrabold text-xs text-center font-tech transition-all">EZVIZ</button>
+                            <button type="button" onclick="setEstBrand('IMOU')" id="estBrandIMOU" data-brand="IMOU" class="est-brand-btn py-3 px-3 rounded-xl border border-slate-200 bg-white text-slate-700 hover:border-slate-300 font-extrabold text-xs text-center font-tech transition-all">IMOU</button>
+                        </div>
+                    </div>
+
+                    <!-- Step 2: Network Connectivity -->
+                    <div>
+                        <label class="block text-xs font-extrabold uppercase text-slate-800 mb-3 tracking-wider">
+                            Step 2: Network &amp; Connection Type
+                        </label>
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                            <button type="button" onclick="setEstNet('4G SIM')" id="estNet4G" class="est-net-btn p-3.5 rounded-xl border border-slate-200 bg-white text-left hover:border-kvRed transition-all">
+                                <div class="flex items-center gap-2 text-slate-900 font-bold text-xs mb-1">
+                                    <i class="fa-solid fa-tower-cell text-kvRed"></i> 4G SIM Network
+                                </div>
+                                <p class="text-[11px] text-slate-500">Standalone SIM without router</p>
+                            </button>
+
+                            <button type="button" onclick="setEstNet('Wi-Fi Wireless')" id="estNetWiFi" class="est-net-btn p-3.5 rounded-xl border border-slate-200 bg-white text-left hover:border-kvRed transition-all">
+                                <div class="flex items-center gap-2 text-slate-900 font-bold text-xs mb-1">
+                                    <i class="fa-solid fa-wifi text-slate-700"></i> Smart Wi-Fi
+                                </div>
+                                <p class="text-[11px] text-slate-500">Connects to home router</p>
+                            </button>
+
+                            <button type="button" onclick="setEstNet('Wired PoE / Turbo HD')" id="estNetWired" class="est-net-btn p-3.5 rounded-xl border-2 border-kvRed bg-red-50 text-left transition-all">
+                                <div class="flex items-center gap-2 text-slate-900 font-bold text-xs mb-1">
+                                    <i class="fa-solid fa-network-wired text-kvRed"></i> Wired DVR/NVR
+                                </div>
+                                <p class="text-[11px] text-slate-500">24/7 Coaxial/Cat6 cabling</p>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Step 3: Camera Quantity -->
+                    <div>
+                        <div class="flex justify-between items-center mb-3">
+                            <label class="text-xs font-extrabold uppercase text-slate-800 tracking-wider">Step 3: Number of Cameras</label>
+                            <span id="estCamBadge" class="font-mono text-kvRed font-extrabold text-xs bg-red-50 px-2.5 py-1 rounded border border-red-200">4 Cameras</span>
+                        </div>
+                        <div class="grid grid-cols-5 gap-2">
+                            <button type="button" onclick="setEstCamCount(1)" data-cams="1" class="est-cam-btn py-2.5 rounded-xl border border-slate-200 bg-white font-mono font-extrabold text-xs transition-all">1 Cam</button>
+                            <button type="button" onclick="setEstCamCount(2)" data-cams="2" class="est-cam-btn py-2.5 rounded-xl border border-slate-200 bg-white font-mono font-extrabold text-xs transition-all">2 Cams</button>
+                            <button type="button" onclick="setEstCamCount(4)" data-cams="4" class="est-cam-btn py-2.5 rounded-xl border-2 border-kvRed bg-red-50 font-mono font-extrabold text-xs text-kvRed transition-all">4 Cams</button>
+                            <button type="button" onclick="setEstCamCount(8)" data-cams="8" class="est-cam-btn py-2.5 rounded-xl border border-slate-200 bg-white font-mono font-extrabold text-xs transition-all">8 Cams</button>
+                            <button type="button" onclick="setEstCamCount(16)" data-cams="16" class="est-cam-btn py-2.5 rounded-xl border border-slate-200 bg-white font-mono font-extrabold text-xs transition-all">16 Cams</button>
+                        </div>
+                    </div>
+
+                    <!-- Step 4: Resolution & Night Vision -->
+                    <div>
+                        <label for="estResolution" class="block text-xs font-extrabold uppercase text-slate-800 mb-3 tracking-wider">Step 4: Camera Resolution &amp; Night Vision</label>
+                        <select id="estResolution" onchange="recalculateEstimator()" class="w-full bg-white border border-slate-300 rounded-xl px-4 py-3 text-slate-800 text-xs font-medium focus:border-kvRed focus:outline-none shadow-sm">
+                            <option value="2mp">2MP Full HD Night Vision (Standard Infrared)</option>
+                            <option value="colorvu" selected>5MP / 3K ColorVu (24/7 Full-Color Night Vision)</option>
+                            <option value="4kip">4K Ultra HD AI Smart Human &amp; Vehicle Detection</option>
+                        </select>
+                    </div>
+
+                    <!-- Step 5: Storage & Optional Add-ons -->
+                    <div>
+                        <label class="block text-xs font-extrabold uppercase text-slate-800 mb-3 tracking-wider">Step 5: Storage &amp; Add-ons</label>
+                        <div class="space-y-2 text-xs text-slate-700">
+                            <label class="flex items-center justify-between p-3 rounded-xl bg-slate-50 border border-slate-200 cursor-pointer hover:bg-white transition-colors">
+                                <div class="flex items-center gap-2">
+                                    <input type="checkbox" id="addonSolar" onchange="recalculateEstimator()" class="accent-kvRed w-4 h-4 rounded">
+                                    <span class="font-semibold">Solar Panel Power Kit (For 4G Standalone setups)</span>
+                                </div>
+                                <span class="font-mono font-bold text-slate-600">+Rs. 18,500</span>
+                            </label>
+                            <label class="flex items-center justify-between p-3 rounded-xl bg-slate-50 border border-slate-200 cursor-pointer hover:bg-white transition-colors">
+                                <div class="flex items-center gap-2">
+                                    <input type="checkbox" id="addonUPS" onchange="recalculateEstimator()" class="accent-kvRed w-4 h-4 rounded">
+                                    <span class="font-semibold">UPS Power Backup System (4-6 Hours During Power Cuts)</span>
+                                </div>
+                                <span class="font-mono font-bold text-slate-600">+Rs. 14,000</span>
+                            </label>
+                            <label class="flex items-center justify-between p-3 rounded-xl bg-slate-50 border border-slate-200 cursor-pointer hover:bg-white transition-colors">
+                                <div class="flex items-center gap-2">
+                                    <input type="checkbox" id="addonSurge" onchange="recalculateEstimator()" class="accent-kvRed w-4 h-4 rounded">
+                                    <span class="font-semibold">Lightning &amp; Power Surge Protector</span>
+                                </div>
+                                <span class="font-mono font-bold text-slate-600">+Rs. 6,500</span>
+                            </label>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Sticky Summary Breakdown Card -->
+                <div class="lg:col-span-5 bg-white border-2 border-slate-900 rounded-3xl p-6 sm:p-8 shadow-2xl relative sticky top-28">
+                    
+                    <div class="flex items-center justify-between border-b border-slate-200 pb-4 mb-6">
+                        <div>
+                            <h3 class="text-xl font-extrabold font-tech text-slate-900">Estimate Summary</h3>
+                            <p class="text-[11px] font-semibold text-slate-500">Includes Hardware, Cabling &amp; Installation</p>
+                        </div>
+                        <span class="text-xs bg-red-50 text-kvRed font-bold border border-red-200 px-2.5 py-1 rounded-full font-mono">
+                            3-Yr Warranty
+                        </span>
+                    </div>
+
+                    <!-- Itemized Specs -->
+                    <div class="space-y-3 text-xs mb-8">
+                        <div class="flex justify-between py-2 border-b border-slate-100">
+                            <span class="text-slate-500 font-medium">Selected Brand:</span>
+                            <span id="sumBrand" class="font-bold text-slate-900">Hikvision</span>
+                        </div>
+                        <div class="flex justify-between py-2 border-b border-slate-100">
+                            <span class="text-slate-500 font-medium">Network Architecture:</span>
+                            <span id="sumNet" class="font-bold text-kvRed">Wired PoE / Turbo HD</span>
+                        </div>
+                        <div class="flex justify-between py-2 border-b border-slate-100">
+                            <span class="text-slate-500 font-medium">Camera Hardware:</span>
+                            <span id="sumCamTech" class="font-bold text-slate-900">4x 5MP / 3K ColorVu Cams</span>
+                        </div>
+                        <div class="flex justify-between py-2 border-b border-slate-100">
+                            <span class="text-slate-500 font-medium">Recording System:</span>
+                            <span id="sumRecorder" class="font-semibold text-slate-800">4-Channel DVR / 1TB HDD</span>
+                        </div>
+                        <div class="flex justify-between py-2 border-b border-slate-100">
+                            <span class="text-slate-500 font-medium">Mobile Phone Access:</span>
+                            <span class="font-bold text-emerald-600 flex items-center gap-1">
+                                <i class="fa-solid fa-circle-check"></i> FREE Mobile App Setup
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Estimated LKR Price Box -->
+                    <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200 text-center mb-6">
+                        <p class="text-[11px] font-extrabold uppercase tracking-wider text-slate-500">Estimated Total Cost (LKR)</p>
+                        <div class="text-3xl font-extrabold text-slate-900 font-mono mt-1" id="estPriceDisplay">
+                            Rs. 78,000 – Rs. 88,000
+                        </div>
+                        <p class="text-[10px] text-slate-500 mt-1 font-medium">*Final formal quote provided after free site survey</p>
+                    </div>
+
+                    <!-- Action Button -->
+                    <button type="button" onclick="transferEstimatorToQuote()" class="w-full py-4 rounded-xl bg-kvRed hover:bg-kvRedHover text-white font-bold text-sm shadow-xl shadow-red-500/25 transition-all flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-paper-plane"></i> Send This Config for Official Quote
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- TRUST PILLARS & QUOTATION REQUEST SECTION -->
+    <section id="why-us" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- 4 Trust Pillars -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
+                <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200">
+                    <div class="w-12 h-12 rounded-xl bg-red-100 text-kvRed flex items-center justify-center text-xl mb-4 font-bold">
+                        <i class="fa-solid fa-shield-check"></i>
+                    </div>
+                    <h4 class="text-lg font-bold text-slate-900 font-tech">TRUSTED SERVICE</h4>
+                    <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+                        100% genuine equipment with official Sri Lankan agency serial numbers and 3-year replacement warranties.
+                    </p>
+                </div>
+
+                <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200">
+                    <div class="w-12 h-12 rounded-xl bg-red-100 text-kvRed flex items-center justify-center text-xl mb-4 font-bold">
+                        <i class="fa-solid fa-bolt"></i>
+                    </div>
+                    <h4 class="text-lg font-bold text-slate-900 font-tech">FAST SUPPORT</h4>
+                    <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+                        Dedicated local technician team in Northern Province for same-day or next-day on-site maintenance.
+                    </p>
+                </div>
+
+                <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200">
+                    <div class="w-12 h-12 rounded-xl bg-red-100 text-kvRed flex items-center justify-center text-xl mb-4 font-bold">
+                        <i class="fa-solid fa-users-gear"></i>
+                    </div>
+                    <h4 class="text-lg font-bold text-slate-900 font-tech">EXPERIENCED TEAM</h4>
+                    <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+                        Certified engineers skilled in precision concealed wiring, network routing, and multi-location remote monitoring.
+                    </p>
+                </div>
+
+                <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200">
+                    <div class="w-12 h-12 rounded-xl bg-red-100 text-kvRed flex items-center justify-center text-xl mb-4 font-bold">
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <h4 class="text-lg font-bold text-slate-900 font-tech">QUALITY SOLUTIONS</h4>
+                    <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+                        Neat casing trunking, surge protection, and long-lasting waterproof junction boxes used on every installation.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Inquiry Form Container -->
+            <div id="contact" class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center bg-slate-900 text-white rounded-3xl p-8 sm:p-12 shadow-2xl">
+                
+                <div class="lg:col-span-5 space-y-6">
+                    <span class="text-kvRed text-xs font-extrabold tracking-widest uppercase bg-red-950 px-3 py-1 rounded-full border border-red-800">
+                        Zero Cost Site Inspection
+                    </span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold font-tech leading-tight">
+                        Book Your Free Site Survey &amp; Formal Quotation
+                    </h2>
+                    <p class="text-slate-300 text-sm leading-relaxed">
+                        Fill out the form to receive a detailed BOQ estimate. Our lead engineer will contact you to schedule a site visit anywhere in Point Pedro, Jaffna, Northern Province, or Islandwide.
+                    </p>
+
+                    <div class="space-y-4 pt-4 border-t border-slate-800 text-xs text-slate-300">
+                        <div class="flex items-center gap-3">
+                            <i class="fa-solid fa-location-dot text-kvRed text-lg"></i>
+                            <span>Point Pedro, Northern Province &amp; Islandwide Sri Lanka</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i class="fa-solid fa-phone text-kvRed text-lg"></i>
+                            <span>+94 77 123 4567 | +94 21 222 3344</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i class="fa-brands fa-whatsapp text-emerald-400 text-lg"></i>
+                            <span>WhatsApp Direct Support: +94 77 123 4567</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-7 bg-white text-slate-900 rounded-2xl p-6 sm:p-8">
+                    <form id="quoteForm" onsubmit="handleQuoteSubmit(event)" class="space-y-4">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label for="custName" class="block text-xs font-bold uppercase text-slate-700 mb-1">Your Full Name *</label>
+                                <input type="text" id="custName" name="custName" autocomplete="name" required placeholder="e.g. S. Thavanesan" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-xs text-slate-800 focus:border-kvRed focus:outline-none">
+                            </div>
+                            <div>
+                                <label for="custPhone" class="block text-xs font-bold uppercase text-slate-700 mb-1">Phone / WhatsApp *</label>
+                                <input type="tel" id="custPhone" name="custPhone" autocomplete="tel" required placeholder="e.g. 077 123 4567" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-xs text-slate-800 focus:border-kvRed focus:outline-none">
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label for="custService" class="block text-xs font-bold uppercase text-slate-700 mb-1">Required Service *</label>
+                                <select id="custService" name="custService" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-xs text-slate-800 focus:border-kvRed focus:outline-none font-medium">
+                                    <option value="CCTV Installation & Maintenance">CCTV Installation & Maintenance</option>
+                                    <option value="Access Control Systems">Access Control & Biometrics</option>
+                                    <option value="Computer Sales & Repair">Computer Sales & Repair</option>
+                                    <option value="Networking & Wi-Fi Setup">Networking & Wi-Fi Setup</option>
+                                    <option value="Website & POS Solutions">Website & POS Solutions</option>
+                                    <option value="Tech Support & AMC Maintenance">Tech Support & AMC</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="custLocation" class="block text-xs font-bold uppercase text-slate-700 mb-1">Property Location / City</label>
+                                <input type="text" id="custLocation" name="custLocation" autocomplete="address-level2" placeholder="e.g. Point Pedro, Jaffna, Kilinochchi" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-xs text-slate-800 focus:border-kvRed focus:outline-none">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="custNotes" class="block text-xs font-bold uppercase text-slate-700 mb-1">Configured System Details / Message</label>
+                            <textarea id="custNotes" name="custNotes" rows="3" placeholder="Tell us about your property size, camera preferences, or special requirements..." class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-xs text-slate-800 focus:border-kvRed focus:outline-none"></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full py-4 rounded-xl bg-kvRed hover:bg-kvRedHover text-white font-bold text-sm shadow-xl shadow-red-500/25 transition-all flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-paper-plane"></i> Submit Inquiry &amp; Generate WhatsApp Message
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- LIGHT FOOTER -->
+    <footer class="bg-slate-100 border-t border-slate-200 text-slate-600 text-xs py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 pb-10 border-b border-slate-300">
+                
+                <div class="space-y-3">
+                    <div class="flex items-center space-x-2">
+                        <span class="text-2xl font-extrabold font-tech text-slate-900">KV</span>
+                        <span class="text-2xl font-extrabold font-tech text-kvRed">TECH</span>
+                    </div>
+                    <p class="text-[10px] font-bold text-slate-500 uppercase tracking-widest">IT • SECURITY • SOLUTIONS</p>
+                    <p class="text-slate-500 leading-relaxed text-xs">
+                        Technology for a Safer Tomorrow. Authorised system integrator for Hikvision, Dahua, EZVIZ, and IMOU across Sri Lanka.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="text-xs font-bold text-slate-900 font-tech uppercase mb-3 tracking-wider">Authorized Brands</h4>
+                    <ul class="space-y-2 font-medium">
+                        <li><a href="#brands" class="hover:text-kvRed">Hikvision ColorVu &amp; IP Systems</a></li>
+                        <li><a href="#brands" class="hover:text-kvRed">Dahua HDCVI &amp; WizSense AI</a></li>
+                        <li><a href="#brands" class="hover:text-kvRed">EZVIZ 4G SIM Solar Cams</a></li>
+                        <li><a href="#brands" class="hover:text-kvRed">IMOU Smart Home Wireless</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-xs font-bold text-slate-900 font-tech uppercase mb-3 tracking-wider">Network Architectures</h4>
+                    <ul class="space-y-2 font-medium">
+                        <li><a href="#network" class="hover:text-kvRed">4G LTE SIM Standalone (No Router)</a></li>
+                        <li><a href="#network" class="hover:text-kvRed">Smart Wi-Fi Wireless Home Cams</a></li>
+                        <li><a href="#network" class="hover:text-kvRed">Wired PoE / Turbo HD DVR-NVR</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-xs font-bold text-slate-900 font-tech uppercase mb-3 tracking-wider">Contact &amp; Location</h4>
+                    <p class="mb-2"><strong>Headquarters:</strong> Point Pedro, Northern Province, Sri Lanka</p>
+                    <p class="mb-2"><strong>Helpline:</strong> +94 77 123 4567</p>
+                    <p class="text-emerald-700 font-bold"><i class="fa-brands fa-whatsapp"></i> WhatsApp Available 24/7</p>
+                </div>
+
+            </div>
+
+            <div class="pt-6 flex flex-col sm:flex-row justify-between items-center text-slate-500 text-[11px] font-medium">
+                <p>&copy; 2026 KV TECH (IT • SECURITY • SOLUTIONS). All Rights Reserved.</p>
+                <p>SAFE | SMART | CONNECTED • Sri Lanka</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- SUCCESS MODAL -->
+    <div id="successModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 items-center justify-center p-4" style="display: none;">
+        <div class="bg-white border border-slate-200 rounded-3xl max-w-md w-full p-6 text-center space-y-4 shadow-2xl relative" onclick="event.stopPropagation()">
+            <button type="button" onclick="closeModal()" aria-label="Close modal" class="absolute top-4 right-4 text-slate-400 hover:text-slate-700 text-lg">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="w-14 h-14 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center text-2xl mx-auto font-bold">
+                <i class="fa-solid fa-check"></i>
+            </div>
+            <h3 class="text-2xl font-extrabold font-tech text-slate-900">Inquiry Ready!</h3>
+            <p class="text-xs text-slate-600 leading-relaxed" id="modalMsg">
+                Thank you! We have prepared your request details.
+            </p>
+            <div class="space-y-2 pt-2">
+                <button type="button" onclick="sendToWhatsAppDirect()" class="w-full py-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs flex items-center justify-center gap-2">
+                    <i class="fa-brands fa-whatsapp text-sm"></i> Send Directly via WhatsApp
+                </button>
+                <button type="button" onclick="closeModal()" class="w-full py-2.5 rounded-xl bg-slate-100 text-slate-700 font-bold text-xs hover:bg-slate-200 transition-colors">
+                    Close Window
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // Hero Camera Feed Controller State
+        function switchHeroCam(camKey) {
+            const nameEl = document.getElementById('heroCamName');
+            const netBadge = document.getElementById('heroNetworkBadge');
+            
+            document.querySelectorAll('.hero-cam-btn').forEach(b => {
+                b.className = "hero-cam-btn px-2 py-2 rounded-xl bg-slate-100 text-slate-700 hover:bg-slate-200 text-xs font-bold transition-all border border-slate-200";
+            });
+
+            if (camKey === 'cam1') {
+                document.getElementById('btnHeroCam1').className = "hero-cam-btn px-2 py-2 rounded-xl bg-kvRed text-white text-xs font-bold transition-all shadow-sm";
+                nameEl.innerHTML = `<span class="w-2 h-2 rounded-full bg-red-500 animate-ping"></span><span>CAM 01 - MAIN ENTRANCE (4K COLORVU)</span>`;
+                netBadge.className = "bg-red-50 text-kvRed border border-red-200 px-2 py-0.5 rounded text-[10px] font-bold";
+                netBadge.innerHTML = `<i class="fa-solid fa-tower-cell mr-1"></i> 4G SIM ONLINE`;
+            } else if (camKey === 'cam2') {
+                document.getElementById('btnHeroCam2').className = "hero-cam-btn px-2 py-2 rounded-xl bg-kvRed text-white text-xs font-bold transition-all shadow-sm";
+                nameEl.innerHTML = `<span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span><span>CAM 02 - OFFICE LOBBY (SMART WI-FI DOME)</span>`;
+                netBadge.className = "bg-emerald-50 text-emerald-700 border border-emerald-200 px-2 py-0.5 rounded text-[10px] font-bold";
+                netBadge.innerHTML = `<i class="fa-solid fa-wifi mr-1"></i> WI-FI CONNECTED`;
+            } else {
+                document.getElementById('btnHeroCam3').className = "hero-cam-btn px-2 py-2 rounded-xl bg-kvRed text-white text-xs font-bold transition-all shadow-sm";
+                nameEl.innerHTML = `<span class="w-2 h-2 rounded-full bg-sky-400 animate-ping"></span><span>CAM 03 - WAREHOUSE (POE NVR WIRED)</span>`;
+                netBadge.className = "bg-sky-50 text-sky-700 border border-sky-200 px-2 py-0.5 rounded text-[10px] font-bold";
+                netBadge.innerHTML = `<i class="fa-solid fa-network-wired mr-1"></i> POE NVR RECORDING`;
+            }
+        }
+
+        function toggleHeroNight(isNight) {
+            const badge = document.getElementById('heroNightModeBadge');
+            const dayBtn = document.getElementById('btnDayMode');
+            const nightBtn = document.getElementById('btnNightMode');
+            const viewport = document.getElementById('heroCamViewport');
+
+            if(isNight) {
+                badge.innerHTML = `<i class="fa-solid fa-moon text-amber-400"></i> COLORVU NIGHT VISION: ACTIVE`;
+                nightBtn.className = "px-3 py-1 rounded-md bg-white text-slate-900 font-bold shadow-sm";
+                dayBtn.className = "px-3 py-1 rounded-md text-slate-600 font-medium";
+                viewport.classList.add('viewport-night');
+            } else {
+                badge.innerHTML = `<i class="fa-solid fa-sun text-amber-500"></i> COLORVU DAYLIGHT MODE`;
+                dayBtn.className = "px-3 py-1 rounded-md bg-white text-slate-900 font-bold shadow-sm";
+                nightBtn.className = "px-3 py-1 rounded-md text-slate-600 font-medium";
+                viewport.classList.remove('viewport-night');
+            }
+        }
+
+        // Brand Filtering Logic
+        function filterBrands(brand) {
+            const tabs = document.querySelectorAll('.brand-tab');
+            const lowerBrand = brand.toLowerCase();
+            
+            tabs.forEach(t => {
+                const text = t.innerText.toLowerCase();
+                if((lowerBrand === 'all' && text.includes('all')) || text.includes(lowerBrand)) {
+                    t.className = "brand-tab px-4 py-2 rounded-xl text-xs font-bold bg-slate-900 text-white shadow-sm transition-all";
+                } else {
+                    t.className = "brand-tab px-4 py-2 rounded-xl text-xs font-bold bg-slate-100 text-slate-700 border border-slate-200 hover:border-kvRed transition-all";
+                }
+            });
+
+            const cards = document.querySelectorAll('.brand-card');
+            cards.forEach(c => {
+                if (lowerBrand === 'all' || c.classList.contains(lowerBrand)) {
+                    c.style.display = 'flex';
+                } else {
+                    c.style.display = 'none';
+                }
+            });
+        }
+
+        // ESTIMATOR CONFIGURATOR STATE & CALCULATION LOGIC
+        let estBrand = 'Hikvision';
+        let estNet = 'Wired PoE / Turbo HD';
+        let estCamCount = 4;
+
+        const brandIdMap = {
+            'hikvision': 'estBrandHik',
+            'dahua': 'estBrandDahua',
+            'ezviz': 'estBrandEZVIZ',
+            'imou': 'estBrandIMOU'
+        };
+
+        function setEstBrand(brand) {
+            estBrand = brand;
+            const targetKey = brand.toLowerCase();
+
+            Object.entries(brandIdMap).forEach(([key, id]) => {
+                const btn = document.getElementById(id);
+                if (btn) {
+                    if (key === targetKey) {
+                        btn.className = "est-brand-btn py-3 px-3 rounded-xl border-2 border-kvRed bg-red-50 text-slate-900 font-extrabold text-xs text-center font-tech transition-all";
+                    } else {
+                        btn.className = "est-brand-btn py-3 px-3 rounded-xl border border-slate-200 bg-white text-slate-700 hover:border-slate-300 font-extrabold text-xs text-center font-tech transition-all";
+                    }
+                }
+            });
+            recalculateEstimator();
+        }
+
+        function setEstNet(net) {
+            estNet = net;
+            const b4g = document.getElementById('estNet4G');
+            const bwifi = document.getElementById('estNetWiFi');
+            const bwired = document.getElementById('estNetWired');
+
+            b4g.className = "est-net-btn p-3.5 rounded-xl border border-slate-200 bg-white text-left hover:border-kvRed transition-all";
+            bwifi.className = "est-net-btn p-3.5 rounded-xl border border-slate-200 bg-white text-left hover:border-kvRed transition-all";
+            bwired.className = "est-net-btn p-3.5 rounded-xl border border-slate-200 bg-white text-left hover:border-kvRed transition-all";
+
+            if (net === '4G SIM') {
+                b4g.className = "est-net-btn p-3.5 rounded-xl border-2 border-kvRed bg-red-50 text-left transition-all";
+            } else if (net === 'Wi-Fi Wireless') {
+                bwifi.className = "est-net-btn p-3.5 rounded-xl border-2 border-kvRed bg-red-50 text-left transition-all";
+            } else {
+                bwired.className = "est-net-btn p-3.5 rounded-xl border-2 border-kvRed bg-red-50 text-left transition-all";
+            }
+            recalculateEstimator();
+        }
+
+        function setEstCamCount(count) {
+            estCamCount = count;
+            document.getElementById('estCamBadge').innerText = `${count} ${count === 1 ? 'Camera' : 'Cameras'}`;
+            
+            const btns = document.querySelectorAll('.est-cam-btn');
+            btns.forEach(btn => {
+                const btnVal = btn.getAttribute('data-cams') || btn.innerText.trim().split(' ')[0];
+                if(btnVal === String(count)) {
+                    btn.className = "est-cam-btn py-2.5 rounded-xl border-2 border-kvRed bg-red-50 font-mono font-extrabold text-xs text-kvRed transition-all";
+                } else {
+                    btn.className = "est-cam-btn py-2.5 rounded-xl border border-slate-200 bg-white font-mono font-extrabold text-xs transition-all";
+                }
+            });
+            recalculateEstimator();
+        }
+
+        function selectBrandInEstimator(brand) {
+            setEstBrand(brand);
+            const el = document.getElementById('estimator');
+            if(el) el.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function selectNetInEstimator(net) {
+            setEstNet(net);
+            const el = document.getElementById('estimator');
+            if(el) el.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function recalculateEstimator() {
+            const res = document.getElementById('estResolution').value;
+            const addonSolar = document.getElementById('addonSolar').checked;
+            const addonUPS = document.getElementById('addonUPS').checked;
+            const addonSurge = document.getElementById('addonSurge').checked;
+
+            let pricePerCam = 11500;
+            let resName = "2MP HD Night Vision";
+            if (res === 'colorvu') {
+                pricePerCam = 15500;
+                resName = "5MP / 3K ColorVu Full-Color";
+            } else if (res === '4kip') {
+                pricePerCam = 22000;
+                resName = "4K Ultra HD AI Smart";
+            }
+
+            // Storage & recording equipment cost logic
+            let recorderCost = 0;
+            let recorderDesc = "";
+
+            if (estNet === '4G SIM' || estNet === 'Wi-Fi Wireless') {
+                // Standalone wireless / 4G cameras utilize individual high-endurance MicroSD cards
+                const sdCostPerCam = 3500;
+                recorderCost = estCamCount * sdCostPerCam;
+                recorderDesc = `${estCamCount}x High-Endurance MicroSD (64GB/128GB)`;
+            } else {
+                // Wired systems use 4/8/16-channel DVR/NVR + Surveillance HDD
+                const dvrChannels = estCamCount <= 4 ? 4 : (estCamCount <= 8 ? 8 : 16);
+                recorderCost = estCamCount <= 4 ? 16000 : (estCamCount <= 8 ? 28000 : 48000);
+                recorderDesc = `${dvrChannels}-Channel DVR/NVR + 1TB Surveillance HDD`;
+            }
+
+            // Network modem / interface factor
+            let netFactor = estNet === '4G SIM' ? 6000 : (estNet === 'Wi-Fi Wireless' ? 2000 : 0);
+
+            let subtotal = (estCamCount * pricePerCam) + recorderCost + netFactor;
+
+            if (addonSolar) subtotal += 18500;
+            if (addonUPS) subtotal += 14000;
+            if (addonSurge) subtotal += 6500;
+
+            const minLKR = Math.round(subtotal / 1000) * 1000;
+            const maxLKR = minLKR + 10000;
+
+            document.getElementById('sumBrand').innerText = estBrand;
+            document.getElementById('sumNet').innerText = estNet;
+            document.getElementById('sumCamTech').innerText = `${estCamCount}x ${resName} Cams`;
+            document.getElementById('sumRecorder').innerText = recorderDesc;
+            document.getElementById('estPriceDisplay').innerText = `Rs. ${minLKR.toLocaleString()} – Rs. ${maxLKR.toLocaleString()}`;
+        }
+
+        function transferEstimatorToQuote() {
+            const price = document.getElementById('estPriceDisplay').innerText;
+            const note = `Selected Config: Brand=${estBrand}, Network=${estNet}, Cams=${estCamCount}, Estimate=${price}. Please confirm site visit date.`;
+            document.getElementById('custService').value = 'CCTV Installation & Maintenance';
+            document.getElementById('custNotes').value = note;
+            document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function scrollToQuoteWithService(serviceName) {
+            document.getElementById('custService').value = serviceName;
+            document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        let whatsappMsgText = "";
+
+        function handleQuoteSubmit(e) {
+            e.preventDefault();
+            const name = document.getElementById('custName').value.trim();
+            const phone = document.getElementById('custPhone').value.trim();
+            const service = document.getElementById('custService').value;
+            const location = document.getElementById('custLocation').value.trim() || 'Northern Province';
+            const notes = document.getElementById('custNotes').value.trim();
+
+            whatsappMsgText = `*KV TECH INQUIRY*%0A*Name:* ${encodeURIComponent(name)}%0A*Phone:* ${encodeURIComponent(phone)}%0A*Service:* ${encodeURIComponent(service)}%0A*Location:* ${encodeURIComponent(location)}%0A*Details:* ${encodeURIComponent(notes)}`;
+
+            document.getElementById('modalMsg').innerText = `Thank you, ${name}! Your request for ${service} at ${location} has been registered. You can send it directly to our technician team on WhatsApp for immediate response.`;
+            
+            const modal = document.getElementById('successModal');
+            modal.style.display = 'flex';
+        }
+
+        function sendToWhatsAppDirect() {
+            if (whatsappMsgText) {
+                window.open(`https://wa.me/94771234567?text=${whatsappMsgText}`, '_blank', 'noopener,noreferrer');
+            }
+            closeModal();
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('successModal');
+            modal.style.display = 'none';
+        }
+
+        // Modal backdrop and keyboard event listeners
+        document.getElementById('successModal').addEventListener('click', (e) => {
+            if (e.target === document.getElementById('successModal')) {
+                closeModal();
+            }
+        });
+
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeModal();
+            }
+        });
+
+        // Mobile Nav Toggle & auto-close on link click
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            const isHidden = mobileMenu.classList.toggle('hidden');
+            mobileMenuBtn.setAttribute('aria-expanded', !isHidden);
+        });
+
+        document.querySelectorAll('.mobile-nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                mobileMenuBtn.setAttribute('aria-expanded', 'false');
+            });
+        });
+
+        // Initialize Estimator on load
+        recalculateEstimator();
+    </script>
+</body>
+</html>
